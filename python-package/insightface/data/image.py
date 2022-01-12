@@ -10,11 +10,12 @@ def get_image(name, to_rgb=False):
     key = (name, to_rgb)
     if key in ImageCache.data:
         return ImageCache.data[key]
-    images_dir = osp.join(Path(__file__).parent.absolute(), 'images')
+    # images_dir = osp.join(Path(__file__).parent.absolute(), 'images')
     ext_names = ['.jpg', '.png', '.jpeg']
     image_file = None
     for ext_name in ext_names:
-        _image_file = osp.join(images_dir, "%s%s"%(name, ext_name))
+        # _image_file = osp.join(images_dir, "%s%s"%(name, ext_name))
+        _image_file = name
         if osp.exists(_image_file):
             image_file = _image_file
             break
